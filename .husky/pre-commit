@@ -1,0 +1,58 @@
+# Husky digunakan agar konfigurasi yang telah di set di eslint dan prettier tidak ada error sebelum kode dicommit ke github. Hal ini agar jika repo digithub auto deploy(CI/CD) maka memastikan bahwa codingan di local berjalan dengan lancar tidak ada error
+echo 'Styling. testing and building your projecy before commit'
+
+# Step 1: Check Prettier
+echo 'Running Prettier check...'
+npm run check-format
+if [ $? -ne 0 ]; then
+    echo '❌ Prettier Check failed. Run "npm run format", add changes, and try commit again'
+    exit 1
+fi
+echo '✅ Prettier Check passed.'
+
+# Step 2: Check Eslint
+echo 'Running ESLint check...'
+npm run check-lint
+if [ $? -ne 0 ]; then
+    echo '❌ ESLint check failed. Make the required changes listed above, add changes, and try commit again'
+    exit 1
+fi
+echo '✅ ESLint check passed.'
+
+# check Eslint dengan menghapus aturan eslint disables
+# npm run lint || {
+#     echo 'Eslint all check failed, Make the required changes listen above. add changes and try commit again'
+#     false
+# }
+
+
+# Step 3: Check TypeScript
+echo 'Running TypeScript type check...'
+npm run check-types
+if [ $? -ne 0 ]; then
+    echo '❌ TypeScript check failed. Make the required changes listed above, add changes, and try commit again'
+    exit 1
+fi
+echo '✅ TypeScript check passed.'
+
+# Step 4: Run Unit Tests
+echo 'Running unit tests...'
+npm run test -- --watch=false
+if [ $? -ne 0 ]; then
+    echo '❌ Unit tests failed. Make the required changes listed above, add changes, and try commit again'
+    exit 1
+fi
+echo '✅ Unit tests passed.'
+
+# Step 5: Build the Project
+echo 'Building the project...'
+npm run build
+if [ $? -ne 0 ]; then
+    echo '❌ Build failed. Review the errors above and try commit again'
+    exit 1
+fi
+echo '✅ Build succeeded.'
+
+# Final Success Message
+echo '🎉 All checks passed. Success to commit!'
+exit 0
