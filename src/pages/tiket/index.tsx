@@ -158,22 +158,22 @@ const ClientTiket = () => {
   return (
     <section className="w-full overflow-hidden h-screen bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] bg-cover bg-center bg-no-repeat p-3 relative">
       <Header displayLogo={false} />
-      <div className="w-full h-full flex flex-col items-center lg:justify-center gap-5 relative overflow-auto">
+      <div className="w-full h-full flex flex-col items-center md:justify-center gap-5 relative overflow-auto">
         <div className="md:w-1/2 lg:w-[30%] h-auto z-10 px-[3rem] py-5 eticket-card" ref={RefTicket}>
-          <header className="flex-center flex-col gap-1">
+          <div className="w-full flex-center flex-col gap-1">
             <img src={asetLogo} alt="motif header" className="object-cover  object-center w-28 h-auto" />
             <h1 className="font-medium text-xl md:text-2xl">{dataEticket?.namaCabang}</h1>
             <p className="font-normal text-xs md:text-base text-center">{dataEticket?.alamat}</p>
             <h2 className="font-medium text-xl md:text-2xl text-blueTone">{dataEticket.status}</h2>
             <AlertCustom message={dataEticket.statusTeks} />
-          </header>
+          </div>
 
-          <div className="w-full mx-auto content-center flex-center flex-col gap-3">
+          <div className="w-full flex-center flex-col gap-3">
             <Separator className="bg-primary my-3 h-[1px]" />
 
             {statusTicket === 'BOOKED' && (
               // BOOKED
-              <div className="grid gap-3">
+              <div className="grid gap-3 w-full">
                 <div className="grid gap-3">
                   <div className="grid grid-flow-col grid-cols-2">
                     <span className="grid text-center">
