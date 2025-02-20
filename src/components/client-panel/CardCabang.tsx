@@ -12,6 +12,9 @@ const CardCabang = ({ data }: { data: any }) => {
               to={`/layanan/${item.id}`}
               key={index}
               className="w-full cursor-pointer relative flex flex-col z-10 h-[150px] sm:h-[159px] overflow-hidden rounded-2xl shadow-lg bg-[#BFBFBF]"
+              onClick={() => {
+                localStorage.setItem('cabang', JSON.stringify(item))
+              }}
             >
               <div className="w-full flex justify-between h-[130px] sm:h-[140px] overflow-hidden ">
                 <div className="w-1/2 relative h-full flex flex-col justify-end p-5 rounded-l-2xl bg-yellowTone">

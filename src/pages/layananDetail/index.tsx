@@ -166,7 +166,7 @@ const LayananDetail = () => {
     <>
       <section className="w-full h-screen bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] z-10 bg-cover  bg-center bg-no-repeat">
         <Header />
-        <div className="md:pt-24 pt-24 w-[90%] mx-auto h-screen grid grid-rows-10">
+        <div className="pt-20 lg:pt-24 w-[90%] mx-auto h-screen grid grid-rows-11 gap-1">
           <span className="w-full flex flex-col gap-1">
             <h2 className="font-medium text-left text-xl  md:text-2xl">Jenis Transaksi</h2>
             <Button onClick={() => finishSelectJtIds()} disabled={!jtIdsSelected}>
@@ -176,9 +176,10 @@ const LayananDetail = () => {
           {/* <p className="sm:text-base text-sm text-center">
             {data?.alamat} {data?.kota?.name} {data?.kota?.provinsi?.name}
           </p> */}
-          {isLoading && <SkeletonCard type="card" count={2} />}
-          <div className="overflow-auto row-span-8 row-end-10 wrapper-cabang rounded-3xl p-3">
-            {arrLayanan?.length > 0 ? (
+          <div className="overflow-auto row-start-2 row-end-11 wrapper-cabang rounded-3xl p-3">
+            {isLoading ? (
+              <SkeletonCard type="card" count={2} />
+            ) : arrLayanan?.length > 0 ? (
               <CardJenisTransaksi data={arrLayanan} action={{ e: getButtonId }} />
             ) : (
               <EmptyData />

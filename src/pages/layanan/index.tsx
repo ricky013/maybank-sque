@@ -8,7 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 const Layanan = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-
+  const dataCabang = localStorage.getItem('cabang')
   // const { data, isError, error } = useGetCabangById(navigate, id)
   const {
     data: dataLayanan,
@@ -38,16 +38,13 @@ const Layanan = () => {
           </p>
         </div> */}
         <div className="flex-center flex-col">
-          <h2 className="font-medium text-xl md:text-2xl">Bank Maybank Indonesia</h2>
-          <p className="sm:text-base text-sm text-center">
-            Jl. Biliton No.5 9, RT.9/RW.5, Gondangdia, Kec. Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta
-            10350
-          </p>
+          <h2 className="font-medium text-xl md:text-2xl">{dataCabang && JSON.parse(dataCabang).nama}</h2>
+          <p className="text-xs lg:text-bsae text-center">{dataCabang && JSON.parse(dataCabang).alamat}</p>
         </div>
-        {isLoadingLayanan && <SkeletonCard type="card" count={2} />}
-
         <div className="overflow-auto row-span-8 wrapper-cabang rounded-3xl p-3">
-          {dataLayanan?.data?.length > 0 ? (
+          {isLoadingLayanan ? (
+            <SkeletonCard type="card" count={2} />
+          ) : dataLayanan?.data?.length > 0 ? (
             <CardLayanan data={dataLayanan?.data} cabangId={String(id)} />
           ) : (
             <EmptyData />

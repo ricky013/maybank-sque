@@ -57,10 +57,14 @@ const Cabang = () => {
             </div>
           </div>
         </div>
-        {isLoading && <SkeletonCard type="card" count={2} />}
-
         <div className="overflow-auto row-span-8 wrapper-cabang rounded-3xl p-3">
-          {filteredCabang?.length > 0 ? <CardCabang data={filteredCabang} /> : <EmptyData />}
+          {isLoading ? (
+            <SkeletonCard type="card" count={2} />
+          ) : filteredCabang?.length > 0 ? (
+            <CardCabang data={filteredCabang} />
+          ) : (
+            <EmptyData />
+          )}
         </div>
       </div>
     </section>

@@ -1,6 +1,8 @@
 import asetLogo from '@assets/client/images/logo-maybank.svg'
+import { useNavigate } from 'react-router-dom'
 
 const Header = ({ displayLogo = true }: { displayLogo?: boolean }) => {
+  const navigate = useNavigate()
   return (
     <div className="w-full relative">
       {/* <img
@@ -20,6 +22,7 @@ const Header = ({ displayLogo = true }: { displayLogo?: boolean }) => {
       /> */}
       {displayLogo && (
         <img
+          onClick={() => navigate('/')}
           src={asetLogo}
           alt="motif header"
           className="object-cover md:scale-125 scale-100 object-center absolute left-[50%] right-[50%] top-12  -translate-x-[50%] -translate-y-[50%] w-1/3 md:w-24"
