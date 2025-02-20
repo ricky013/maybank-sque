@@ -68,7 +68,7 @@ const app = createBrowserRouter([
     )
   },
   {
-    path: '/detail/layanan/:id',
+    path: '/detail/layanan/:cabangId/:layananId',
     element: (
       <ClientLayout>
         <ClientDetailLayanan />
@@ -84,7 +84,7 @@ const app = createBrowserRouter([
     )
   },
   {
-    path: '/tiket',
+    path: '/eticket/:tanggalBooking/:kodeBooking',
     element: (
       <ClientLayout>
         <ClientTiket />

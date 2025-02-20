@@ -31,19 +31,31 @@ const endpoint = {
   historiKonsultasi: '/histori-konsultasi',
 
   // layanan
-  layanan: '/layanan',
+  layanan: 'dropdown/layanan',
 
   // provinsi
-  provinsi: '/provinsi',
+  provinsi: 'dropdown/provinsi',
 
   // kota
-  kota: '/kota',
+  kota: 'dropdown/kota',
 
   // cabang
   cabang: '/cabang',
 
   // jenis transaksi
-  jenisTransaksi: '/jenisTransaksi'
+  jenisTransaksi: 'dropdown/jenisTransaksi',
+
+  // tanggal
+  tanggal: 'cabang/tanggal',
+
+  // booking
+  booking: 'booking',
+
+  // ticket
+  eTicket: 'tiket',
+
+  // survey
+  survei: 'tiket/survei'
 }
 
 export default endpoint

@@ -21,7 +21,11 @@ const FormInput: React.FC<IFormInput> = ({ name, label, type, errors, placeholde
 
   return (
     <div className="space-y-1">
-      {label && <Label htmlFor={name}>{label}</Label>}
+      {label && (
+        <Label htmlFor={name} className="text-black">
+          {label}
+        </Label>
+      )}
       <Controller
         name={name}
         control={control}

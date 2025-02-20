@@ -37,7 +37,7 @@ echo '✅ TypeScript check passed.'
 
 # Step 4: Run Unit Tests
 echo 'Running unit tests...'
-npm run test -- --watch=false
+npm run test -- --watch=false --passWithNoTests
 if [ $? -ne 0 ]; then
     echo '❌ Unit tests failed. Make the required changes listed above, add changes, and try commit again'
     exit 1

@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
-import asetLogoBNI from '@assets/client/images/logo-bni.svg'
+import asetLogo from '@assets/client/images/logo-maybank.svg'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useGetProvinsi } from '@features/provinsi.feature'
 import { useEffect, useState } from 'react'
@@ -28,7 +28,7 @@ const Domisili = () => {
   }, [domisili])
 
   useEffect(() => {
-    if (domisili.provinsiId) {
+    if (domisili.provinsiId != '') {
       setDomisili((prev) => ({ ...prev, kotaId: '' }))
       refetchKota()
     }
@@ -40,11 +40,11 @@ const Domisili = () => {
 
   return (
     <section className="w-screen h-screen flex-center  overflow-hidden z-0 bg-[url('/src/assets/client/images/bg-gedung.jpeg')] top-0 left-0 bottom-0 right-0 relative bg-cover bg-center">
-      <div className="relative top-0 left-0 bottom-0 right-0 bg-[url('/src/assets/client/images/bg-background.png')] z-10 bg-cover sm:bg-contain bg-center w-full h-full"></div>
+      <div className="relative top-0 left-0 bottom-0 right-0  bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] z-10 bg-cover  bg-center bg-no-repeat w-full h-full"></div>
 
       <div className="w-full h-full  flex-center absolute z-20 flex-col flex gap-20 ">
-        <div className="flex-center w-full ">
-          <img src={asetLogoBNI} className="object-cover object-center" />
+        <div className="flex-center w-full">
+          <img src={asetLogo} className="object-cover object-center w-1/2 lg:w-1/3" />
         </div>
 
         <div className="wrapper-domisili rounded-md md:w-1/2 w-[90%] mx-auto md:p-10 p-5 flex flex-col gap-5">
@@ -58,7 +58,7 @@ const Domisili = () => {
                 {data?.data?.length > 0 && isLoading === false ? (
                   data?.data?.map((item: any) => (
                     <SelectItem key={item.id} value={item.id}>
-                      {item.name}
+                      {item.teks}
                     </SelectItem>
                   ))
                 ) : (
@@ -82,7 +82,7 @@ const Domisili = () => {
                       onClick={() => setDomisili({ ...domisili, kotaId: item.id })}
                       value={item.id}
                     >
-                      {item.name}
+                      {item.teks}
                     </SelectItem>
                   ))
                 ) : (
@@ -95,7 +95,7 @@ const Domisili = () => {
           <Button
             disabled={isDisabledButton}
             variant={'active'}
-            className="w-1/2 mx-auto flex-center"
+            className="w-1/2 mx-auto flex-center bg-blackTone"
             onClick={() => navigate(`/cabang/${domisili.kotaId}`)}
           >
             OK

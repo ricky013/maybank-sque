@@ -56,7 +56,12 @@ const config = {
         card: {
           DEFAULT: 'var(--card)',
           foreground: 'var(--card-foreground)'
-        }
+        },
+        blackTone: '#383838',
+        orangeTone: '#E89700',
+        yellowTone: '#FABC19',
+        blueTone: '#0567C0',
+        shadowTone: 'rgba(255, 218, 119, 1)'
       },
       borderRadius: {
         lg: 'var(--radius)',

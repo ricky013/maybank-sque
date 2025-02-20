@@ -1,19 +1,32 @@
-import { Link } from 'react-router-dom'
+import asetLogoTeller from '@assets/client/images/logo-teller.png'
+import asetLogoCustomerService from '@assets/client/images/logo-cutomer-service.png'
 
-const CardJenisTransaksi = ({ data }: { data: any }) => {
+interface ActionProps {
+  e: (event: React.MouseEvent, teks: any) => void
+}
+
+const CardJenisTransaksi = ({ data, action }: { data: any; action: ActionProps }) => {
   return (
-    <div className="w-full grid mt-5 grid-cols-1 md:gap-2 gap-3 md:grid-cols-2 wrapper-cabang p-2 sm:p-5 border rounded-2xl">
+    <div className="w-full grid grid-cols-1 md:gap-2 gap-3 md:grid-cols-2">
       {data?.map((item: any, index: number) => {
         return (
-          <Link
-            to={`/detail/layanan/booking/${item?.id}`}
+          <button
             key={index}
-            className="grid grid-cols-1 overflow-hidden h-[36px] sm:h-[56px] bg-white shadow-2xl rounded-2xl"
+            id={item.id}
+            onClick={(e) => action.e(e, item)}
+            className="grid grid-cols-1 overflow-hidden sm:h-[56px] bg-white shadow-2xl rounded-2xl"
           >
-            <div className="flex-center flex-col gap-3 p-2 bg-primary text-primary-foreground">
-              <h4 className="font-semibold text-sm text-center sm:text-xl line-clamp-2">Nama : {item?.nama} </h4>
+            <div className="gap-3 p-2 bg-orangeTone text-primary-foreground flex items-center">
+              {item?.teks?.toUpperCase() === 'TELLER' ? (
+                <img src={asetLogoTeller} alt="logo teller" className="object-cover object-center" />
+              ) : (
+                <img src={asetLogoCustomerService} alt="logo teller" className="object-cover object-center" />
+              )}
+              <h4 className="font-semibold text-sm text-center sm:text-2xl line-clamp-2 ">
+                {item?.teks.toUpperCase()}
+              </h4>
             </div>
-          </Link>
+          </button>
         )
       })}
     </div>

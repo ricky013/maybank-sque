@@ -20,20 +20,37 @@ interface ICalender {
   control: any
   className?: string
   placeholder?: string
+  excludeDate: any
 }
 
-const FormCalender: React.FC<ICalender> = ({ name, label, errors, control, customError, className, placeholder }) => {
+const FormCalender: React.FC<ICalender> = ({
+  name,
+  label,
+  errors,
+  control,
+  customError,
+  className,
+  placeholder,
+  excludeDate
+}) => {
   const [open, setOpen] = useState(false)
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined)
 
+  function isWeekend(day: any) {
+    const dayOfWeek = day.getDay()
+    return dayOfWeek === 0 || dayOfWeek === 6 // 0 = Minggu, 6 = Sabtu
+  }
+
   return (
     <div className={`space-y-1 ${className}`}>
-      <Label htmlFor={name}>{label}</Label>
+      <Label htmlFor={name} className="text-black">
+        {label}
+      </Label>
       <Controller
         name={name}
         control={control}
         render={({ field }) => (
-          <>
+          <div className="grid w-full">
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>
                 <Button
@@ -62,12 +79,17 @@ const FormCalender: React.FC<ICalender> = ({ name, label, errors, control, custo
                     setOpen(false)
                   }}
                   initialFocus
+                  disabled={
+                    excludeDate
+                      ? [{ before: new Date() }, isWeekend, ...excludeDate]
+                      : [{ before: new Date() }, isWeekend]
+                  }
                 />
               </PopoverContent>
             </Popover>
             {errors[name] && <ErrorInputForm statusError={errors[name]} />}
             {customError?.status && <p className="mt-1 text-xs text-red-500">{customError.message}</p>}
-          </>
+          </div>
         )}
       />
     </div>

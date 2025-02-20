@@ -12,11 +12,12 @@ export const useGetAllCabangByKotaId = (navigate: any, kotaId: string | undefine
         throw new Error(response.message)
       }
 
-      return {
-        data: response.data,
-        message: response.message,
-        pagination: response.meta
-      }
+      // return {
+      //   data: response.data,
+      //   message: response.message,
+      //   pagination: response.meta
+      // }
+      return response.content
     },
     placeholderData: (previousData) => previousData,
     refetchOnWindowFocus: false

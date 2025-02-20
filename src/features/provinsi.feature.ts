@@ -1,7 +1,7 @@
 import PROVINSI_SERVICE from '@services/provinsi.service'
 import { useQuery } from '@tanstack/react-query'
 
-export const useGetProvinsi = (navigate: any) => {
+export const useGetProvinsi = () => {
   return useQuery({
     queryKey: ['provinsi'],
     queryFn: async () => {

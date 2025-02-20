@@ -39,3 +39,11 @@ export const formattedTanggalAwal = (dateRange: DateRange | undefined) => {
 export const formattedTanggalAkhir = (dateRange: DateRange | undefined) => {
   return dateRange?.to ? format(dateRange.to, 'yyyy-MM-dd') : ''
 }
+
+export const formatDateToYYYYMMDD = (date: any) => {
+  const year = date.getFullYear() // Mendapatkan tahun (YYYY)
+  const month = String(date.getMonth() + 1).padStart(2, '0') // Mendapatkan bulan (MM), ditambah 1 karena bulan dimulai dari 0
+  const day = String(date.getDate()).padStart(2, '0') // Mendapatkan tanggal (DD)
+
+  return `${year}-${month}-${day}` // Menggabungkan menjadi YYYY-MM-DD
+}

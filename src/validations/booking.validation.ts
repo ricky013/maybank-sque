@@ -1,7 +1,8 @@
 import * as yup from 'yup'
 
 export const formClientBooking = {
-  bookingDate: ''
+  bookingDate: '',
+  jT: ''
 }
 
 export const schemaClientBooking = yup.object().shape({

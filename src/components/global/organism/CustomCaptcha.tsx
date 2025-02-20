@@ -1,4 +1,4 @@
-import { RefreshCcw, Volume2 } from 'lucide-react'
+// import { RefreshCcw, Volume2 } from 'lucide-react'
 import React, { useEffect, useRef, useState } from 'react'
 
 interface CustomCaptchaProps {
@@ -30,11 +30,11 @@ const CustomCaptcha: React.FC<CustomCaptchaProps> = ({
     fontBold: 'bold',
     fontSize: 24,
     typeFont: 'Arial'
-  },
-  optionsAudio = {
-    lang: 'id-ID',
-    text: 'Masukkan kode berikut:'
   }
+  // optionsAudio = {
+  //   lang: 'id-ID',
+  //   text: 'Masukkan kode berikut:'
+  // }
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const wrapperRef = useRef<HTMLDivElement | null>(null)
@@ -43,7 +43,8 @@ const CustomCaptcha: React.FC<CustomCaptchaProps> = ({
 
   // Generate random text for the CAPTCHA
   const generateCaptchaText = (length = 6): string => {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    const chars = '0123456789'
+    // const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     return Array.from({ length }, () => chars.charAt(Math.floor(Math.random() * chars.length))).join('')
   }
 
@@ -129,12 +130,12 @@ const CustomCaptcha: React.FC<CustomCaptchaProps> = ({
   }
 
   // Play CAPTCHA text as audio
-  const playCaptchaAudio = () => {
-    const speech = new SpeechSynthesisUtterance()
-    speech.lang = optionsAudio.lang //  default: Bahasa Indonesia
-    speech.text = `${optionsAudio.text} ${captchaText.split('').join(', ')}`
-    window.speechSynthesis.speak(speech)
-  }
+  // const playCaptchaAudio = () => {
+  //   const speech = new SpeechSynthesisUtterance()
+  //   speech.lang = optionsAudio.lang //  default: Bahasa Indonesia
+  //   speech.text = `${optionsAudio.text} ${captchaText.split('').join(', ')}`
+  //   window.speechSynthesis.speak(speech)
+  // }
 
   // Monitor wrapper size and resize canvas
   useEffect(() => {
@@ -163,20 +164,20 @@ const CustomCaptcha: React.FC<CustomCaptchaProps> = ({
 
   return (
     <div className="p-3 flex gap-2 flex-col w-full bg-[#EEEEEE] rounded-md">
-      <div className="flex w-full gap-[5%] justify-between">
-        <div ref={wrapperRef} className="flex w-[85%] justify-between gap-3">
-          <canvas ref={canvasRef} />
-        </div>
+      {/* <div className="flex w-full  justify-between"> */}
+      <div ref={wrapperRef} className="w-full flex items-center justify-center bg-white rounded">
+        <canvas ref={canvasRef} width="100%" />
+      </div>
 
-        <div className="flex w-[10%]  flex-col gap-3 justify-end ">
+      {/* <div className="flex w-[10%]  flex-col gap-3 justify-end ">
           <div className="bg-white p-1 flex-center rounded-md cursor-pointer">
             <Volume2 className="h-4 w-4" onClick={playCaptchaAudio} />
           </div>
           <div className="bg-white p-1 flex-center rounded-md cursor-pointer">
             <RefreshCcw className="h-4 w-4" onClick={refreshCaptcha} />
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
       <div className="w-full bg-white rounded-md">
         <input

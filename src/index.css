@@ -52,6 +52,7 @@ sedangkan Background adalah warna yangada dibelekang object utama */
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -84,6 +85,7 @@ sedangkan Background adalah warna yangada dibelekang object utama */
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -98,39 +100,54 @@ sedangkan Background adalah warna yangada dibelekang object utama */
 .hDPlLz {
   border-top-width: 0px !important;
 }
+
 /* end custom react table */
 
 /* start custom sweet-alert */
 .swal-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Background gelap dengan transparansi */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Background gelap dengan transparansi */
 }
 
 .swal-modal {
-  background-color: #ffffff; /* Background modal */
-  border-radius: 8px; /* Sudut membulat */
-  padding: 20px; /* Padding dalam modal */
+  background-color: #ffffff;
+  /* Background modal */
+  border-radius: 8px;
+  /* Sudut membulat */
+  padding: 20px;
+  /* Padding dalam modal */
 }
 
 .swal-title {
-  color: #d9534f; /* Warna judul */
-  font-size: 20px; /* Ukuran font judul */
+  color: #d9534f;
+  /* Warna judul */
+  font-size: 20px;
+  /* Ukuran font judul */
 }
 
 .swal-text {
-  color: #333333; /* Warna teks */
-  font-size: 16px; /* Ukuran font teks */
+  color: #333333;
+  /* Warna teks */
+  font-size: 16px;
+  /* Ukuran font teks */
 }
 
 .swal-button--confirm {
-  background-color: var(--primary) !important; /* Warna tombol konfirmasi */
-  color: var(--primary-foreground) !important; /* Warna teks tombol konfirmasi */
+  background-color: var(--primary) !important;
+  /* Warna tombol konfirmasi */
+  color: var(--primary-foreground) !important;
+  /* Warna teks tombol konfirmasi */
 }
 
 .swal-button--cancel {
-  background-color: var(--danger) !important; /* Warna tombol batal */
-  color: var(--primary-foreground) !important; /* Warna teks tombol konfirmasi */
-  border: none; /* Menghilangkan border */
+  background-color: var(--danger) !important;
+  /* Warna tombol batal */
+  color: var(--primary-foreground) !important;
+  /* Warna teks tombol konfirmasi */
+  border: none;
+  /* Menghilangkan border */
 }
+
 /* end custom sweet alert */
 
 /* carousel custom start */
@@ -203,7 +220,8 @@ sedangkan Background adalah warna yangada dibelekang object utama */
 }
 
 .custom-dot.active::after {
-  display: none; /* Hide the white dot for active state */
+  display: none;
+  /* Hide the white dot for active state */
   height: 8px !important;
 }
 
@@ -212,6 +230,7 @@ sedangkan Background adalah warna yangada dibelekang object utama */
 .slick-next {
   display: none !important;
 }
+
 /* carousel custom end */
 
 .wrapper-domisili {
@@ -229,4 +248,27 @@ sedangkan Background adalah warna yangada dibelekang object utama */
 
 .shadow-navbar-teller {
   box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.eticket-card {
+  /* width: 100%; */
+  /* height: fit-content; */
+  border-radius: 0em;
+  /* padding: 1em 2em 0em 2em !important; */
+  border-radius: 0;
+  background-size: 55% 100%;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle at 0 50%, rgba(255, 255, 224, 0) 2em, #f4f4f4 0.5em),
+    radial-gradient(circle at 100% 50%, rgba(255, 255, 224, 0) 2em, #f4f4f4 0.5em);
+  background-position:
+    top left,
+    top right;
+  box-sizing: content-box;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  position: relative;
+  -webkit-filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
 }

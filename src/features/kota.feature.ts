@@ -18,6 +18,7 @@ export const useGetAllKotaByprovinsi = (navigate: any, provinsiId: string | unde
         pagination: response.meta
       }
     },
+    enabled: false,
     placeholderData: (previousData) => previousData,
     refetchOnWindowFocus: false
   })
