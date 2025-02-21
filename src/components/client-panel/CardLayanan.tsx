@@ -10,19 +10,21 @@ const CardLayanan = ({ data, cabangId }: { data: any; cabangId: string }) => {
           <Link
             to={`/detail/layanan/${cabangId}/${item?.id}`}
             key={index}
-            className="grid grid-cols-3 overflow-hidden h-[136px] sm:h-[146px] bg-white shadow-2xl rounded-2xl"
+            className="flex overflow-hidden shadow-2xl rounded-2xl"
           >
-            <div className="flex-center flex-col gap-3 p-2 bg-orangeTone text-primary-foreground">
+            <div className="grid grid-cols-5 items-center gap-1 p-3 bg-orangeTone text-primary-foreground w-full">
               {item?.teks?.toUpperCase() === 'TELLER' ? (
-                <img src={asetLogoTeller} alt="logo teller" className="object-cover object-center" />
+                <span className="grid place-items-center">
+                  <img src={asetLogoTeller} alt="logo teller" className="object-cover object-center" />
+                </span>
               ) : (
-                <img src={asetLogoCustomerService} alt="logo teller" className="object-cover object-center" />
+                <span className="grid place-items-center">
+                  <img src={asetLogoCustomerService} alt="logo teller" className="object-cover object-center" />
+                </span>
               )}
-              <h4 className="font-semibold text-sm text-center sm:text-2xl line-clamp-2 ">
-                {item?.teks.toUpperCase()}
-              </h4>
+              <h4 className="font-semibold text-sm sm:text-2xl line-clamp-2 col-span-4">{item?.teks.toUpperCase()}</h4>
             </div>
-            <div className="items-center justify-center flex flex-col p-2 gap-3 border-r-2 border-yellowTone">
+            {/* <div className="items-center justify-center flex flex-col p-2 gap-3 border-r-2 border-yellowTone">
               <h4 className="font-medium line-clamp-2 text-wrap text-center text-xs sm:text-base leading-4">
                 Menunggu
               </h4>
@@ -37,7 +39,7 @@ const CardLayanan = ({ data, cabangId }: { data: any; cabangId: string }) => {
               <p className="font-normal line-clamp-2 text-wrap text-center text-xs sm:text-base leading-4">
                 Sisa kouta : 22
               </p>
-            </div>
+            </div> */}
           </Link>
         )
       })}

@@ -176,7 +176,7 @@ const LayananDetail = () => {
           {/* <p className="sm:text-base text-sm text-center">
             {data?.alamat} {data?.kota?.name} {data?.kota?.provinsi?.name}
           </p> */}
-          <div className="overflow-auto row-start-2 row-end-11 wrapper-cabang rounded-3xl p-3">
+          <div className="overflow-auto row-start-2 row-end-11 wrapper-cabang rounded-3xl p-3 lg:p-5">
             {isLoading ? (
               <SkeletonCard type="card" count={2} />
             ) : arrLayanan?.length > 0 ? (
