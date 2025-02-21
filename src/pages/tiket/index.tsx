@@ -160,7 +160,7 @@ const ClientTiket = () => {
       <Header displayLogo={false} />
       <div className="w-full h-full flex flex-col items-center md:justify-center gap-5 relative overflow-auto">
         <div className="md:w-1/2 lg:w-[30%] h-auto z-10 px-[3rem] py-5 eticket-card" ref={RefTicket}>
-          <div className="w-full flex-center flex-col gap-1">
+          <div className="w-full flex-center flex-col gap-1 text-center">
             <img src={asetLogo} alt="motif header" className="object-cover  object-center w-28 h-auto" />
             <h1 className="font-medium text-xl md:text-2xl">{dataEticket?.namaCabang}</h1>
             <p className="font-normal text-xs md:text-base text-center">{dataEticket?.alamat}</p>
