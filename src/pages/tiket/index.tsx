@@ -24,7 +24,7 @@ const ClientTiket = () => {
 
   const navigate = useNavigate()
   const { kodeBooking, tanggalBooking } = useParams()
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   // const [show, setShow] = useState(false)
   const [rating, setRating] = useState(0)
   const [catatanSurvei, setCatatanSurvei] = useState('')

@@ -171,7 +171,7 @@ const LayananDetail = () => {
             {data?.alamat} {data?.kota?.name} {data?.kota?.provinsi?.name}
             </p> */}
           <span className="w-full flex flex-col gap-1 row-start-2">
-            <h2 className="font-medium text-left text-xl  md:text-2xl">Jenis Transaksi</h2>
+            <h2 className="font-medium text-left text-xl  md:text-2xl">Pilih Jenis Transaksi :</h2>
             <Button onClick={() => finishSelectJtIds()} disabled={!jtIdsSelected}>
               PESAN
             </Button>

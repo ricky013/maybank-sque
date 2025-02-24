@@ -37,9 +37,10 @@ const Layanan = () => {
             {data?.alamat} {data?.kota?.name} {data?.kota?.provinsi?.name}
           </p>
         </div> */}
-        <div className="flex-center flex-col">
-          <h2 className="font-medium text-xl md:text-2xl">{dataCabang && JSON.parse(dataCabang).nama}</h2>
+        <div className="grid">
+          <h2 className="font-medium text-xl md:text-2xl text-center">{dataCabang && JSON.parse(dataCabang).nama}</h2>
           <p className="text-xs lg:text-bsae text-center">{dataCabang && JSON.parse(dataCabang).alamat}</p>
+          <h2 className="font-medium text-left text-xl  md:text-2xl flex flex-start">Pilih Layanan :</h2>
         </div>
         <div className="overflow-auto row-span-8 wrapper-cabang rounded-3xl p-3">
           {isLoadingLayanan ? (
