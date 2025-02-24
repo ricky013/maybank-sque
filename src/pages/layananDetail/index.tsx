@@ -166,17 +166,17 @@ const LayananDetail = () => {
     <>
       <section className="w-full h-screen bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] z-10 bg-cover  bg-center bg-no-repeat">
         <Header />
-        <div className="pt-20 lg:pt-24 w-[90%] mx-auto h-screen grid grid-rows-11 gap-1">
-          <span className="w-full flex flex-col gap-1">
+        <div className="w-[90%] mx-auto h-screen grid grid-rows-10 gap-3">
+          {/* <p className="sm:text-base text-sm text-center">
+            {data?.alamat} {data?.kota?.name} {data?.kota?.provinsi?.name}
+            </p> */}
+          <span className="w-full flex flex-col gap-1 row-start-2">
             <h2 className="font-medium text-left text-xl  md:text-2xl">Jenis Transaksi</h2>
             <Button onClick={() => finishSelectJtIds()} disabled={!jtIdsSelected}>
               PESAN
             </Button>
           </span>
-          {/* <p className="sm:text-base text-sm text-center">
-            {data?.alamat} {data?.kota?.name} {data?.kota?.provinsi?.name}
-          </p> */}
-          <div className="overflow-auto row-start-2 row-end-11 wrapper-cabang rounded-3xl p-3 lg:p-5">
+          <div className="overflow-auto row-start-3 row-end-10 wrapper-cabang rounded-3xl p-3 lg:p-5">
             {isLoading ? (
               <SkeletonCard type="card" count={2} />
             ) : arrLayanan?.length > 0 ? (

@@ -14,7 +14,7 @@ const CardJenisTransaksi = ({ data, action }: { data: any; action: ActionProps }
             key={index}
             id={item.id}
             onClick={(e) => action.e(e, item)}
-            className="grid grid-cols-1 overflow-hidden sm:h-[56px] bg-white shadow-2xl rounded-2xl"
+            className="grid grid-cols-1 overflow-hidden  bg-white shadow-2xl rounded-2xl"
           >
             <div className="gap-3 p-2 bg-orangeTone text-primary-foreground flex items-center">
               {item?.teks?.toUpperCase() === 'TELLER' ? (

@@ -24,7 +24,7 @@ const ClientTiket = () => {
 
   const navigate = useNavigate()
   const { kodeBooking, tanggalBooking } = useParams()
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
   // const [show, setShow] = useState(false)
   const [rating, setRating] = useState(0)
   const [catatanSurvei, setCatatanSurvei] = useState('')
@@ -94,8 +94,8 @@ const ClientTiket = () => {
   }
 
   const share = () => {
-    const win = window.open(`https://wa.me/?text=${message}`, '_blank')
     const message = window.location.href
+    const win = window.open(`https://wa.me/?text=${message}`, '_blank')
 
     const closeTab = () => {
       win?.close()
@@ -134,7 +134,7 @@ const ClientTiket = () => {
   const DialogPenilaian = () => {
     return (
       <Dialog open={isOpen} onOpenChange={() => setIsOpen(false)}>
-        <DialogContent className="bg-[url(/src/assets/client/images/bg-popup.svg)] bg-cover bg-no-repeat bg-center border-none">
+        <DialogContent className="bg-[url(/src/assets/client/images/bg-popup.svg)] bg-cover bg-no-repeat bg-center border-none w-[90%]">
           <DialogHeader>
             {/* <img src={asetMotifHeaderCardCabang} className="absolute left-0 top-0 -z-10" /> */}
           </DialogHeader>
