@@ -12,7 +12,7 @@ const ClientLayout = ({ children }: ClientLayoutProps) => {
         <div className="min-h-screen overflow-hidden">{children}</div>
 
         <div className="absolute bottom-0 left-0 flex items-center justify-center w-full">
-          <img src={LogoSque} className="w-[117px]" />
+          <img src={LogoSque} className="w-24" />
         </div>
         <Toaster />
       </div>

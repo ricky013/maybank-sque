@@ -4,14 +4,12 @@ import asetLogo from '@assets/client/images/logo-maybank.svg'
 
 const Home = () => {
   return (
-    <section className="w-screen h-screen flex-center overflow-hidden z-0 top-0 left-0 bottom-0 right-0 relative bg-cover bg-center">
-      <div className="relative top-0 left-0 bottom-0 right-0 bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] z-10 bg-cover  bg-center bg-no-repeat w-full h-full"></div>
-
+    <section className="w-screen h-screen flex-center overflow-hidden relative bg-responsive">
       <div className="w-full h-full flex-center absolute z-20 flex-col flex gap-10">
         <div className="flex-center w-full">
           <img src={asetLogo} className="object-cover object-center w-1/2 lg:w-1/3" />
         </div>
-        <div className="flex flex-col gap-1 sm:gap-3 flex-center">
+        <div className="grid gap-1 sm:gap-3 text-center">
           <h1 className="text-2xl tracking-tight uppercase text-secondary-foreground font-semibold">
             Selamat Datang di Antrian
           </h1>

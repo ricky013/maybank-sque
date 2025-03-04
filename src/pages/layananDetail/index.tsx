@@ -164,7 +164,7 @@ const LayananDetail = () => {
 
   return (
     <>
-      <section className="w-full h-screen bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] z-10 bg-cover  bg-center bg-no-repeat">
+      <section className="w-full h-screen bg-responsive">
         <Header />
         <div className="w-[90%] mx-auto h-screen grid grid-rows-10 gap-3">
           {/* <p className="sm:text-base text-sm text-center">
@@ -176,7 +176,7 @@ const LayananDetail = () => {
               PESAN
             </Button>
           </span>
-          <div className="overflow-auto row-start-3 row-end-10 wrapper-cabang rounded-3xl p-3 lg:p-5">
+          <div className="overflow-auto row-start-3 row-end-10 wrapper-cabang rounded-3xl p-3">
             {isLoading ? (
               <SkeletonCard type="card" count={2} />
             ) : arrLayanan?.length > 0 ? (

@@ -156,7 +156,7 @@ const ClientTiket = () => {
   }
 
   return (
-    <section className="w-full overflow-hidden h-screen bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] bg-cover bg-center bg-no-repeat p-3 relative">
+    <section className="w-full overflow-hidden h-screen bg-responsive p-3 relative">
       <Header displayLogo={false} />
       <div className="w-full h-full flex flex-col items-center md:justify-center gap-5 relative overflow-auto">
         <div className="md:w-1/2 lg:w-[30%] h-auto z-10 px-[3rem] py-5 eticket-card" ref={RefTicket}>

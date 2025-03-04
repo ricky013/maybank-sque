@@ -12,7 +12,11 @@ sedangkan Background adalah warna yangada dibelekang object utama */
     --primary-foreground: #ffffff;
 
     /* background landscape*/
-    --background-landscape: url('/src/assets/client/images/lg-bg.svg') /* background secondary */ --secondary: #fe8f33;
+    --background-landscape: url('/src/assets/client/images/lg-bg.svg');
+    /* background potrait */
+    --background-potrait: url('/src/assets/client/images/sm-bg.svg');
+    /* background secondary */
+    --secondary: #fe8f33;
     /* color secondary foreground */
     --secondary-foreground: #000000;
 
@@ -88,6 +92,10 @@ sedangkan Background adalah warna yangada dibelekang object utama */
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  .bg-responsive {
+    @apply bg-potrait lg:bg-landscape bg-cover bg-center bg-no-repeat;
   }
 }
 

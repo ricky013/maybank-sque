@@ -107,6 +107,10 @@ const config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'collapsible-down': 'collapsible-down 0.2s ease-out',
         'collapsible-up': 'collapsible-up 0.2s ease-out'
+      },
+      backgroundImage: {
+        landscape: 'var(--background-landscape)',
+        potrait: 'var(--background-potrait)'
       }
     }
   },

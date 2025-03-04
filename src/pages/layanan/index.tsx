@@ -28,15 +28,9 @@ const Layanan = () => {
   // }, [isError, isErrorLayanan])
 
   return (
-    <section className="w-full min-h-screen bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] z-10 bg-cover  bg-center bg-no-repeat">
+    <section className="w-full min-h-screen bg-responsive">
       <Header />
       <div className="w-[90%] mx-auto grid h-screen grid-rows-10 gap-3">
-        {/* <div className="flex-center flex-col">
-          <h2 className="font-medium text-xl md:text-2xl">{data?.name}</h2>
-          <p className="sm:text-base text-sm text-center">
-            {data?.alamat} {data?.kota?.name} {data?.kota?.provinsi?.name}
-          </p>
-        </div> */}
         <div className="grid row-start-2">
           <h2 className="font-medium text-xl md:text-2xl text-center">{dataCabang && JSON.parse(dataCabang).nama}</h2>
           <p className="text-xs lg:text-bsae text-center">{dataCabang && JSON.parse(dataCabang).alamat}</p>

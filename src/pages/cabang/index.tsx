@@ -25,9 +25,9 @@ const Cabang = () => {
 
   useEffect(() => {
     if (filterText) {
-      const filteredItems = data?.filter((item) =>
+      const filteredItems = data?.filter((item: []) =>
         Object.values(item).some(
-          (value) => typeof value === 'string' && value.toLowerCase().includes(filterText.toLowerCase())
+          (value) => typeof value === 'string' && (value as string).toLowerCase().includes(filterText.toLowerCase())
         )
       )
       return setFilteredCabang(filteredItems)
@@ -41,9 +41,9 @@ const Cabang = () => {
   }
 
   return (
-    <section className="w-full h-screen bg-[url('/src/assets/client/images/sm-bg.svg')] lg:bg-[url('/src/assets/client/images/lg-bg.svg')] z-10 bg-cover  bg-center bg-no-repeat grid">
+    <section className="w-full h-screen grid bg-responsive">
       <Header />
-      <div className="md:pt-24 pt-24 w-[90%] mx-auto grid h-screen  grid-rows-10">
+      <div className="md:pt-24 pt-24 w-[90%] mx-auto grid h-screen grid-rows-10">
         <div className="w-full md:grid md:grid-cols-2 flex justify-between gap-3 items-center">
           <h2 className="font-medium text-xs md:text-base lg:text-2xl">Daftar Cabang</h2>
           <div className="flex-center flex gap-3">
