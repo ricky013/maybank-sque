@@ -22,7 +22,7 @@ const CardJenisTransaksi = ({ data, action }: { data: any; action: ActionProps }
               ) : (
                 <img src={asetLogoCustomerService} alt="logo teller" className="object-cover object-center" />
               )}
-              <h4 className="font-semibold text-sm text-center sm:text-2xl line-clamp-2 ">
+              <h4 className="font-semibold text-sm sm:text-2xl line-clamp-2 flex  flex-start">
                 {item?.teks.toUpperCase()}
               </h4>
             </div>

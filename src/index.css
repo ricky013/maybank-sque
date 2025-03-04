@@ -11,8 +11,8 @@ sedangkan Background adalah warna yangada dibelekang object utama */
     /* color primary foreground */
     --primary-foreground: #ffffff;
 
-    /* background secondary */
-    --secondary: #fe8f33;
+    /* background landscape*/
+    --background-landscape: url('/src/assets/client/images/lg-bg.svg') /* background secondary */ --secondary: #fe8f33;
     /* color secondary foreground */
     --secondary-foreground: #000000;
 

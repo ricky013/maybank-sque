@@ -45,7 +45,7 @@ const Cabang = () => {
       <Header />
       <div className="md:pt-24 pt-24 w-[90%] mx-auto grid h-screen  grid-rows-10">
         <div className="w-full md:grid md:grid-cols-2 flex justify-between gap-3 items-center">
-          <h2 className="font-medium text-base lg:text-2xl">Daftar Cabang</h2>
+          <h2 className="font-medium text-xs md:text-base lg:text-2xl">Daftar Cabang</h2>
           <div className="flex-center flex gap-3">
             <InputSearch
               search={filterText}

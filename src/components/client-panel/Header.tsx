@@ -25,7 +25,7 @@ const Header = ({ displayLogo = true }: { displayLogo?: boolean }) => {
           onClick={() => navigate('/')}
           src={asetLogo}
           alt="motif header"
-          className="object-cover md:scale-125 scale-100 object-center absolute left-[50%] right-[50%] top-12  -translate-x-[50%] -translate-y-[50%] w-1/3 md:w-24"
+          className="object-cover md:scale-125 scale-100 object-center absolute left-[50%] right-[50%] top-12  -translate-x-[50%] -translate-y-[50%] w-1/3 md:w-24 cursor-pointer"
         />
       )}
     </div>

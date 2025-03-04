@@ -3,6 +3,15 @@ import IconMoving from '@assets/client/icons/moving.svg'
 import { Link } from 'react-router-dom'
 
 const CardCabang = ({ data }: { data: any }) => {
+  const findLayananTeller = (arr: { nama: string; sisaAntrian: number }[]) => {
+    const result = arr.filter((item) => item.nama === 'Teller')
+    return result
+  }
+
+  const findLayananCS = (arr: { nama: string; sisaAntrian: number }[]) => {
+    const result = arr.filter((item) => item.nama === 'Customer Service')
+    return result
+  }
   return (
     <>
       <div className="w-full grid grid-cols-1 md:gap-5 gap-3 md:grid-cols-2">
@@ -28,13 +37,17 @@ const CardCabang = ({ data }: { data: any }) => {
                         <h4 className="font-medium line-clamp-2 text-wrap text-center text-xs lg:text-base leading-4">
                           TELLER
                         </h4>
-                        <span className="text-3xl font-medium text-secondary">{item.statusLayanan[0].sisaAntrian}</span>
+                        <span className="text-3xl font-medium text-secondary">
+                          {findLayananTeller(item.statusLayanan)[0]?.sisaAntrian ?? 0}
+                        </span>
                       </div>
                       <div className="flex flex-col justify-between items-center h-full gap-3  px-1">
                         <h4 className="font-medium line-clamp-2 text-xs lg:text-base sm:line-clamp-2 leading-4 text-wrap text-center">
                           CUSTOMER SERVICE
                         </h4>
-                        <span className="text-3xl font-medium text-secondary">{item.statusLayanan[1].sisaAntrian}</span>
+                        <span className="text-3xl font-medium text-secondary">
+                          {findLayananCS(item.statusLayanan)[0]?.sisaAntrian ?? 0}
+                        </span>
                       </div>
                     </div>
                   </div>
