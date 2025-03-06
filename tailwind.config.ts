@@ -110,7 +110,8 @@ const config = {
       },
       backgroundImage: {
         landscape: 'var(--background-landscape)',
-        potrait: 'var(--background-potrait)'
+        potrait: 'var(--background-potrait)',
+        cabang: 'var(--background-cabang)'
       }
     }
   },

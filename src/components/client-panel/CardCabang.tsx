@@ -25,11 +25,11 @@ const CardCabang = ({ data }: { data: any }) => {
                 localStorage.setItem('cabang', JSON.stringify(item))
               }}
             >
-              <div className="w-full flex justify-between overflow-hidden ">
-                <div className="w-1/2 relative h-full flex flex-col justify-end p-5 rounded-l-2xl bg-[url('/src/assets/client/images/bg-cabang.svg')] bg-cover bg-center">
+              <div className="w-full flex justify-between overflow-hidden shadow-lg shadow-shadowTone rounded-2xl">
+                <div className="w-1/2 relative h-full flex flex-col justify-end p-5 rounded-l-2xl bg-cabang bg-cover bg-center">
                   <h4 className="text-xs lg:text-base font-bold">{item?.nama}</h4>
                 </div>
-                <div className="w-1/2 bg-primary-foreground p-2 rounded-r-2xl relative">
+                <div className="w-1/2 bg-primary-foreground p-2 rounded-r-2xl relative border-e border-yellowTone border-y">
                   <div className="w-full h-full  overflow-hidden">
                     <h3 className="font-medium text-center text-yellowTone text-sm sm:text-lg mb-2">Sisa Antrian</h3>
                     <div className="w-full grid grid-cols-2">
