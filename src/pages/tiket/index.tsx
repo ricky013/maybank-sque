@@ -158,8 +158,8 @@ const ClientTiket = () => {
   return (
     <section className="w-full overflow-hidden h-screen bg-responsive p-3 relative">
       <Header displayLogo={false} />
-      <div className="w-full h-full flex flex-col items-center md:justify-center gap-5 relative overflow-auto">
-        <div className="md:w-1/2 lg:w-[30%] h-auto z-10 px-[3rem] py-5 eticket-card" ref={RefTicket}>
+      <div className="w-full h-[90%] flex flex-col items-center justify-center gap-5 relative overflow-auto">
+        <div className="md:w-1/2 lg:w-[30%] z-10 px-[3rem] py-5 eticket-card" ref={RefTicket}>
           <div className="w-full flex-center flex-col gap-1 text-center">
             <img src={asetLogo} alt="motif header" className="object-cover  object-center w-28 h-auto" />
             <h1 className="font-medium text-xl md:text-2xl">{dataEticket?.namaCabang}</h1>
@@ -683,7 +683,7 @@ const ClientTiket = () => {
         </div>
 
         {statusTicket === 'BOOKED' && (
-          <div className="z-10 grid md:grid-cols-3 gap-3 w-full md:w-1/2 lg:w-[30%]">
+          <div className="z-10 grid grid-cols-3 gap-3 w-full md:w-1/2 lg:w-[30%]">
             <Button className="w-full bg-blackTone text-white flex gap-1" onClick={() => downloadScreenshot()}>
               <Download className="w-4 h-4 " />
               Unduh

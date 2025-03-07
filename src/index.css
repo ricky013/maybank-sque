@@ -262,7 +262,7 @@ sedangkan Background adalah warna yangada dibelekang object utama */
 
 .eticket-card {
   /* width: 100%; */
-  /* height: fit-content; */
+  height: fit-content;
   border-radius: 0em;
   /* padding: 1em 2em 0em 2em !important; */
   border-radius: 0;
@@ -276,7 +276,7 @@ sedangkan Background adalah warna yangada dibelekang object utama */
   background-position:
     top left,
     top right;
-  box-sizing: content-box;
+  /* box-sizing: content-box; */
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
   position: relative;
   -webkit-filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
