@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogFooter, DialogHeader } from '@/components/
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
 import iconPenilaian from '@assets/client/icons/icon-penilaian.png'
-import asetLogo from '@assets/client/images/logo-maybank.svg'
+import asetLogo from '@assets/client/images/logo-maybank.png'
 import { useGetTicket, useSendSurvey } from '@features/ticket.feature.'
 import { ClockIcon, Copy, Download, Home, Save, Share2 } from 'lucide-react'
 import { QRCodeSVG } from 'qrcode.react'

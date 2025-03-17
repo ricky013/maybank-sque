@@ -99,6 +99,48 @@ sedangkan Background adalah warna yangada dibelekang object utama */
   .bg-responsive {
     @apply bg-potrait lg:bg-landscape bg-cover bg-center bg-no-repeat;
   }
+
+  body::after {
+    content: 'POC ONLY - NOT FOR PRODUCTION';
+    /* Teks watermark */
+    position: fixed;
+    /* Tetap di posisi layar */
+    top: 0;
+    /* Mulai dari atas */
+    left: 0;
+    /* Mulai dari kiri */
+    width: 100vw;
+    /* Lebar sebesar viewport */
+    height: 100vh;
+    /* Tinggi sebesar viewport */
+    z-index: 9998;
+    /* Pastikan watermark berada di atas elemen lain */
+    pointer-events: none;
+    /* Agar tidak mengganggu interaksi pengguna */
+    font-size: calc(2vw + 2vh + 10px);
+    /* Ukuran font responsif */
+    font-weight: bold;
+    /* Tebal font */
+    color: rgba(128, 128, 128, 0.3);
+    /* Warna teks dengan transparansi */
+    display: flex;
+    align-items: center;
+    /* Pusat vertikal */
+    justify-content: center;
+    /* Pusat horizontal */
+    transform: rotate(-45deg);
+    /* Putar teks -45 derajat */
+    white-space: nowrap;
+    /* Mencegah teks pindah baris */
+  }
+
+  /* Penyesuaian untuk layar kecil (misalnya mobile) */
+  @media (max-width: 768px) {
+    body::after {
+      font-size: calc(1vw + 2vh + 10px);
+      /* Ukuran font lebih besar untuk layar kecil */
+    }
+  }
 }
 
 .flex-center {

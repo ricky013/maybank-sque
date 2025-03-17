@@ -1,4 +1,4 @@
-import asetLogo from '@assets/client/images/logo-maybank.svg'
+import asetLogo from '@assets/client/images/logo-maybank.png'
 import { useNavigate } from 'react-router-dom'
 
 const Header = ({ displayLogo = true }: { displayLogo?: boolean }) => {

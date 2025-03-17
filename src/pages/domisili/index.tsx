@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
-import asetLogo from '@assets/client/images/logo-maybank.svg'
+import asetLogo from '@assets/client/images/logo-maybank.png'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useGetProvinsi } from '@features/provinsi.feature'
 import { useEffect, useState } from 'react'
