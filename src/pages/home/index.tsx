@@ -29,7 +29,7 @@ const Home = () => {
             <h2 className="text-2xl font-bold">ONLINE MAYBANK</h2>
           </div>
           <p className="text-center text-lg sm:text-base text-secondary-foreground font-normal px-5">
-            Silahkan tekan lanjut untuk melihat daftar cabang yang tersedia untuk Antrian Online kami.
+            Silahkan tekan lihat daftar cabang untuk melihat daftar cabang yang tersedia untuk Antrian Online kami.
           </p>
 
           <Link to="/domisili">
