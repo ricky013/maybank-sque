@@ -1,11 +1,11 @@
 import { Button } from '@/components/ui/button'
 import { useNavigate } from 'react-router-dom'
-import asetLogo from '@assets/client/images/logo-maybank.png'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { useGetProvinsi } from '@features/provinsi.feature'
 import { useEffect, useState } from 'react'
 import { useGetAllKotaByprovinsi } from '@features/kota.feature'
 import { toast } from 'sonner'
+import { LOGO_TENANT } from '@utils/constants'
 
 const Domisili = () => {
   const navigate = useNavigate()
@@ -42,7 +42,7 @@ const Domisili = () => {
     <section className="w-screen h-screen flex-center  overflow-hidden z-0 bg-responsive">
       <div className="w-full h-full  flex-center absolute z-20 flex-col flex gap-20 ">
         <div className="flex-center w-full">
-          <img src={asetLogo} className="object-cover object-center w-1/2 lg:w-1/3" />
+          <img src={LOGO_TENANT} className="object-cover object-center w-1/2 lg:w-1/3" />
         </div>
 
         <div className="wrapper-domisili rounded-md md:w-1/2 w-[90%] mx-auto md:p-10 p-5 flex flex-col gap-5">
