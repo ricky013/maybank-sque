@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 import DisclaimerPopup from '@/components/client-panel/DisclaimerPopup'
 import { useState } from 'react'
-import { LOGO_TENANT } from '@utils/constants'
+import { LOGO_TENANT } from '@utils/constants.ts'
 
 const Home = () => {
   const [isPopupVisible, setIsPopupVisible] = useState<boolean>(true) // State untuk mengontrol visibilitas popup

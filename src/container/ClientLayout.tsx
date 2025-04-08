@@ -1,6 +1,6 @@
 import React from 'react'
 import { Toaster } from 'sonner'
-import { LOGO_SQUE } from '@utils/constants.js'
+import { LOGO_SQUE } from '@utils/constants.ts'
 
 type ClientLayoutProps = {
   children: React.ReactNode

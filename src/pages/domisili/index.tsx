@@ -5,7 +5,7 @@ import { useGetProvinsi } from '@features/provinsi.feature'
 import { useEffect, useState } from 'react'
 import { useGetAllKotaByprovinsi } from '@features/kota.feature'
 import { toast } from 'sonner'
-import { LOGO_TENANT } from '@utils/constants'
+import { LOGO_TENANT } from '@utils/constants.ts'
 
 const Domisili = () => {
   const navigate = useNavigate()

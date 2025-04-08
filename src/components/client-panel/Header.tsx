@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { LOGO_TENANT } from '@utils/constants'
+import { LOGO_TENANT } from '@utils/constants.ts'
 
 const Header = ({ displayLogo = true }: { displayLogo?: boolean }) => {
   const navigate = useNavigate()
