@@ -20,10 +20,24 @@ import { useForm } from 'react-hook-form'
 import { Outlet, useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 
+interface DataBody {
+  cabangId: string
+  layananId: string
+  tanggal: string
+  telepon: string
+  jtIds: string
+}
+
 const LayananDetail = () => {
   const { cabangId, layananId } = useParams()
   const navigate = useNavigate()
-  const [dataBody, setDataBody] = useState()
+  const [dataBody, setDataBody] = useState<DataBody>({
+    cabangId: String(cabangId),
+    layananId: String(layananId),
+    tanggal: '',
+    telepon: '',
+    jtIds: ''
+  })
   const {
     data: dataLayanan,
     isLoading,
@@ -43,9 +57,9 @@ const LayananDetail = () => {
     // isError: isErrorTanggal,
     // error: errorTanggal,
     refetch: refetchTanggal
-  } = useGetTanggalBooking(navigate, cabangId, layananId)
+  } = useGetTanggalBooking(cabangId, layananId)
 
-  const [arrLayanan, setArrLayanan] = useState([])
+  const [arrLayanan, setArrLayanan] = useState<any[]>([])
   const [, setArrTanggal] = useState([])
   const [arrExclude, setArrExclude] = useState([])
   const [showModal, setShow] = useState(false)
@@ -53,14 +67,15 @@ const LayananDetail = () => {
   const [jtIdsSelected, setJtIdsSelected] = useState(false)
   const [namaJtIds, setNamaJtIds] = useState('')
   const [isCaptchValid, setIsCaptchValid] = useState(false)
-  const [arrJtIds, setArrJtIds] = useState([])
+  const [arrJtIds, setArrJtIds] = useState<string[]>([])
 
   const {
     control,
     handleSubmit,
     formState: { errors },
     setValue,
-    reset
+    reset,
+    clearErrors
   } = useForm({
     defaultValues: formClientBooking,
     resolver: yupResolver(schemaClientBooking)
@@ -71,26 +86,27 @@ const LayananDetail = () => {
   }
 
   const handleClickLayanan = () => {
-    refetchTanggal(cabangId, layananId)
+    refetchTanggal()
     setShow(true)
   }
 
-  const getButtonId = (e: React.MouseEvent<HTMLButtonElement>, teks: any) => {
+  const getButtonId = (e: React.MouseEvent<HTMLButtonElement>, item: any) => {
     setJtIdsSelected(true)
     const element = e.currentTarget
     element.style.display = 'none' // Sembunyikan elemen yang diklik
 
     setArrJtIds((prev) => [...prev, element.id]) // Update state dengan spread operator
-    setNamaJtIds((prev) => `${prev} - ${teks.teks}`) // Update namaJtIds dengan template string
+    setNamaJtIds((prev) => `${prev} - ${item.teks}`) // Update namaJtIds dengan template string
   }
 
-  const onSubmit = async (data: { bookingDate: string }) => {
+  const onSubmit = async (data: { bookingDate: string; telepon: string }) => {
     try {
       setDataBody({
-        layananId,
-        cabangId,
+        layananId: String(layananId),
+        cabangId: String(cabangId),
         tanggal: formatDateToYYYYMMDD(new Date(data?.bookingDate)),
-        jtIds: JSON.stringify(arrJtIds)
+        jtIds: JSON.stringify(arrJtIds),
+        telepon: data?.telepon
       })
     } catch (error: any) {
       console.error(error)
@@ -109,7 +125,6 @@ const LayananDetail = () => {
     setJtIdsSelected(false)
     setArrJtIds([])
     setNamaJtIds('')
-    setDataBody()
   }
 
   useEffect(() => {
@@ -130,7 +145,7 @@ const LayananDetail = () => {
   }, [dataTanggal])
 
   useEffect(() => {
-    if (!dataBody || Object.keys(dataBody).length === 0) {
+    if (dataBody.jtIds === '') {
       console.error('DataBody is required before fetching')
       return
     }
@@ -158,8 +173,9 @@ const LayananDetail = () => {
   useEffect(() => {
     if (!showModal) {
       showLagiSemuaCard()
-      reset()
+      reset(formClientBooking)
     }
+    clearErrors()
   }, [showModal])
 
   return (
@@ -180,7 +196,12 @@ const LayananDetail = () => {
             {isLoading ? (
               <SkeletonCard type="card" count={2} />
             ) : arrLayanan?.length > 0 ? (
-              <CardJenisTransaksi data={arrLayanan} action={{ e: getButtonId }} />
+              <CardJenisTransaksi
+                data={arrLayanan}
+                action={(e: React.MouseEvent<HTMLButtonElement>, teks: any) => {
+                  getButtonId(e, teks)
+                }}
+              />
             ) : (
               <EmptyData />
             )}
@@ -207,6 +228,14 @@ const LayananDetail = () => {
               errors={errors}
               type="text"
               disabled
+            />
+            <FormInput
+              label="No Telepon"
+              name="telepon"
+              placeholder="Masukan No Telepon"
+              control={control}
+              errors={errors}
+              type="text"
             />
             <FormCalender
               className="grid gap-2 "

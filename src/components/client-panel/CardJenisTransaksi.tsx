@@ -1,11 +1,7 @@
 import asetLogoTeller from '@assets/client/images/logo-teller.png'
 import asetLogoCustomerService from '@assets/client/images/logo-cutomer-service.png'
 
-interface ActionProps {
-  e: (event: React.MouseEvent, teks: any) => void
-}
-
-const CardJenisTransaksi = ({ data, action }: { data: any; action: ActionProps }) => {
+const CardJenisTransaksi = ({ data, action }: { data: any; action: any }) => {
   return (
     <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2">
       {data?.map((item: any, index: number) => {
@@ -13,7 +9,7 @@ const CardJenisTransaksi = ({ data, action }: { data: any; action: ActionProps }
           <button
             key={index}
             id={item.id}
-            onClick={(e) => action.e(e, item)}
+            onClick={(e) => action(e, item)}
             className="grid grid-cols-1 overflow-hidden  bg-white shadow-2xl rounded-2xl"
           >
             <div className="gap-3 p-2 bg-orangeTone text-primary-foreground flex items-center">

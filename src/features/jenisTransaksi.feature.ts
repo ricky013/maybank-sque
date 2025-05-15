@@ -45,7 +45,7 @@ export const useGetJenisTransaksiByCabangAndLayanan = (
   })
 }
 
-export const useGetTanggalBooking = (navigate: any, cabangId: string | undefined, layananId: string | undefined) => {
+export const useGetTanggalBooking = (cabangId: string | undefined, layananId: string | undefined) => {
   return useQuery({
     queryKey: ['layananId', layananId],
     queryFn: async () => {
