@@ -1,4 +1,3 @@
-import Header from '@/components/client-panel/Header'
 import AlertCustom from '@/components/global/atoms/AlertCustom.js'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogFooter, DialogHeader } from '@/components/ui/dialog'
@@ -156,9 +155,8 @@ const ClientTiket = () => {
   }
 
   return (
-    <section className="w-full overflow-hidden h-screen bg-responsive p-3 relative">
-      <Header displayLogo={false} />
-      <div className="w-full h-[90%] flex flex-col items-center justify-center gap-5 relative overflow-auto">
+    <section className="w-full overflow-hidden h-screen  p-3 relative">
+      <div className="w-full flex flex-col items-center justify-center gap-5 relative overflow-auto">
         <div className="md:w-1/2 lg:w-[30%] z-10 px-[3rem] py-5 eticket-card" ref={RefTicket}>
           <div className="w-full flex-center flex-col gap-1 text-center">
             <img src={asetLogo} alt="motif header" className="object-cover  object-center w-28 h-auto" />

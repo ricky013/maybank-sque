@@ -38,17 +38,17 @@ const app = createBrowserRouter([
   {
     path: '/',
     element: (
-      <ClientLayout>
-        <ClientHome />
-      </ClientLayout>
+      // <ClientLayout>
+      <ClientHome />
+      // </ClientLayout>
     )
   },
   {
     path: '/domisili',
     element: (
-      <ClientLayout>
-        <ClientDomisili />
-      </ClientLayout>
+      // <ClientLayout>
+      <ClientDomisili />
+      // </ClientLayout>
     )
   },
   {

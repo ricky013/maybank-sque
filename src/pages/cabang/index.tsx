@@ -1,5 +1,4 @@
 import CardCabang from '@/components/client-panel/CardCabang'
-import Header from '@/components/client-panel/Header'
 import EmptyData from '@/components/global/atoms/EmptyData'
 import SkeletonCard from '@/components/global/atoms/SkeletonCard'
 import InputSearch from '@/components/global/moleculs/InputSearch'
@@ -41,31 +40,28 @@ const Cabang = () => {
   }
 
   return (
-    <section className="w-full h-screen grid bg-responsive">
-      <Header />
-      <div className="md:pt-24 pt-24 w-[90%] mx-auto grid h-screen grid-rows-10">
-        <div className="w-full md:grid md:grid-cols-2 flex justify-between gap-3 items-center">
-          <h2 className="font-medium text-xs md:text-base lg:text-2xl">Daftar Cabang</h2>
-          <div className="flex-center flex gap-3">
-            <InputSearch
-              search={filterText}
-              placeholder="Cari"
-              handleSearchChange={(e) => setFilterText(e.target.value)}
-            />
-            <div className="cursor-pointer flex-center">
-              <RefreshCcw className=" h-4 w-4" onClick={() => setFilterText('')} />
-            </div>
+    <section className="flex flex-col gap-3 min-h-[80vh]">
+      <div className="w-full md:grid md:grid-cols-2 flex justify-between gap-3 items-center">
+        <h2 className="font-medium text-xs md:text-base lg:text-2xl">Daftar Cabang</h2>
+        <div className="flex-center flex gap-3">
+          <InputSearch
+            search={filterText}
+            placeholder="Cari"
+            handleSearchChange={(e) => setFilterText(e.target.value)}
+          />
+          <div className="cursor-pointer flex-center">
+            <RefreshCcw className=" h-4 w-4" onClick={() => setFilterText('')} />
           </div>
         </div>
-        <div className="overflow-auto row-span-8 wrapper-cabang rounded-3xl p-3">
-          {isLoading ? (
-            <SkeletonCard type="card" count={2} />
-          ) : filteredCabang?.length > 0 ? (
-            <CardCabang data={filteredCabang} />
-          ) : (
-            <EmptyData />
-          )}
-        </div>
+      </div>
+      <div className="overflow-auto wrapper-cabang rounded-3xl p-5 flex-grow">
+        {isLoading ? (
+          <SkeletonCard type="card" count={2} />
+        ) : filteredCabang?.length > 0 ? (
+          <CardCabang data={filteredCabang} />
+        ) : (
+          <EmptyData />
+        )}
       </div>
     </section>
   )

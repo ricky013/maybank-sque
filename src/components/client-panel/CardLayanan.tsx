@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const CardLayanan = ({ data, cabangId }: { data: any; cabangId: string }) => {
   return (
-    <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2">
+    <div className="w-full grid grid-cols-1 gap-5 md:grid-cols-2">
       {data?.map((item: any, index: number) => {
         return (
           <Link

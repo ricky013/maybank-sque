@@ -3,7 +3,7 @@ import asetLogoCustomerService from '@assets/client/images/logo-cutomer-service.
 
 const CardJenisTransaksi = ({ data, action }: { data: any; action: any }) => {
   return (
-    <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2">
+    <div className="w-full grid grid-cols-1 gap-5 md:grid-cols-2">
       {data?.map((item: any, index: number) => {
         return (
           <button

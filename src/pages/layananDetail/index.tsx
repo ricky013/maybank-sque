@@ -1,5 +1,4 @@
 import CardJenisTransaksi from '@/components/client-panel/CardJenisTransaksi'
-import Header from '@/components/client-panel/Header'
 import EmptyData from '@/components/global/atoms/EmptyData'
 import SkeletonCard from '@/components/global/atoms/SkeletonCard'
 import FormCalender from '@/components/global/moleculs/FormCalender'
@@ -17,7 +16,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { formClientBooking, schemaClientBooking } from '@validations/booking.validation'
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Outlet, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 
 interface DataBody {
@@ -179,35 +178,28 @@ const LayananDetail = () => {
   }, [showModal])
 
   return (
-    <>
-      <section className="w-full h-screen bg-responsive">
-        <Header />
-        <div className="w-[90%] mx-auto h-screen grid grid-rows-10 gap-3">
-          {/* <p className="sm:text-base text-sm text-center">
-            {data?.alamat} {data?.kota?.name} {data?.kota?.provinsi?.name}
-            </p> */}
-          <span className="w-full flex flex-col gap-1 row-start-2">
-            <h2 className="font-medium text-left text-xl  md:text-2xl">Pilih Jenis Transaksi :</h2>
-            <Button onClick={() => finishSelectJtIds()} disabled={!jtIdsSelected}>
-              PESAN
-            </Button>
-          </span>
-          <div className="overflow-auto row-start-3 row-end-10 wrapper-cabang rounded-3xl p-3">
-            {isLoading ? (
-              <SkeletonCard type="card" count={2} />
-            ) : arrLayanan?.length > 0 ? (
-              <CardJenisTransaksi
-                data={arrLayanan}
-                action={(e: React.MouseEvent<HTMLButtonElement>, teks: any) => {
-                  getButtonId(e, teks)
-                }}
-              />
-            ) : (
-              <EmptyData />
-            )}
-          </div>
-        </div>
-      </section>
+    <section className="flex flex-col gap-3 min-h-[80vh]">
+      <span className="w-full flex flex-col gap-1">
+        <h2 className="font-medium text-left text-xl  md:text-2xl">Pilih Jenis Transaksi :</h2>
+        <Button onClick={() => finishSelectJtIds()} disabled={!jtIdsSelected}>
+          PESAN
+        </Button>
+      </span>
+      <div className="overflow-auto wrapper-cabang rounded-3xl p-5 flex-grow">
+        {isLoading ? (
+          <SkeletonCard type="card" count={2} />
+        ) : arrLayanan?.length > 0 ? (
+          <CardJenisTransaksi
+            data={arrLayanan}
+            action={(e: React.MouseEvent<HTMLButtonElement>, teks: any) => {
+              getButtonId(e, teks)
+            }}
+          />
+        ) : (
+          <EmptyData />
+        )}
+      </div>
+
       <Dialog
         open={showModal}
         onOpenChange={() => {
@@ -262,8 +254,7 @@ const LayananDetail = () => {
           </form>
         </DialogContent>
       </Dialog>
-      <Outlet />
-    </>
+    </section>
   )
 }
 

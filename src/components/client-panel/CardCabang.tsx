@@ -14,7 +14,7 @@ const CardCabang = ({ data }: { data: any }) => {
   }
   return (
     <>
-      <div className="w-full grid grid-cols-1 md:gap-5 gap-3 md:grid-cols-2">
+      <div className="w-full grid grid-cols-1 md:gap-5 gap-5 md:grid-cols-2">
         {data?.map((item: any, index: number) => {
           return (
             <Link
