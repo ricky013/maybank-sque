@@ -12,7 +12,5 @@ export const schemaClientBooking = yup.object().shape({
   telepon: yup
     .string()
     .required('Nomor telepon harus diisi')
-    .matches(/^0\d*$/, 'Nomor telepon harus angka dimulai dengan 0')
-    .min(10, 'Nomor telepon terlalu pendek')
-    .max(15, 'Nomor telepon terlalu panjang')
+    .matches(/^08\d{8,11}$/, 'Nomor harus dimulai dengan 08 dan panjang antara 10–13 angka')
 })

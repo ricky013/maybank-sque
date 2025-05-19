@@ -77,6 +77,7 @@ const LayananDetail = () => {
     clearErrors
   } = useForm({
     defaultValues: formClientBooking,
+    mode: 'onChange',
     resolver: yupResolver(schemaClientBooking)
   })
 
